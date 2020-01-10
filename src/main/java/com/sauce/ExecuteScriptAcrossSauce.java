@@ -2,11 +2,20 @@ package com.sauce;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.MutableCapabilities;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
@@ -81,8 +90,13 @@ public class ExecuteScriptAcrossSauce {
 				e.printStackTrace();
 			}
 
+	        /*
+			WebElement ele= driver.findElement(By.id("dsfs"));
+			WebDriverWait wait = new WebDriverWait(driver, 10);
+			WebElement sd=wait.until(ExpectedConditions.elementToBeClickable(ele));
+			*/
 			return (RemoteWebDriver) driver;
-			
+
 	  }
 	
 	  
